@@ -16,7 +16,7 @@ module Menu
       when '1'
         #Slot file
       when '2'
-        high_low = High_low.new
+        high_low = HighLow.new
         high_low.play
       when '3'
         #Check bankroll

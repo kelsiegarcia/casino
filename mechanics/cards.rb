@@ -13,7 +13,7 @@ module Mechanics
     attr_accessor :cards
 
     def initialize
-      @ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
+      @ranks = %w(2 3 4 5 6 7 8 9 10 J Q K A)
       @suits = %w(Spades Diamonds Clubs Hearts)
       @cards = []
       generate_deck
@@ -31,6 +31,9 @@ module Mechanics
       @cards.sample.rank
     end
 
+    def self.rank_index
+    	%w(2 3 4 5 6 7 8 9 10 J Q K A)
+    end
   end
 
 end
