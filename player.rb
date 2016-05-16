@@ -16,14 +16,12 @@ module Player
 			puts 'How much money do you want to start with?'
 			@money = gets.strip.to_i
 
-			player_one = {name: @name, bankroll: @money}
-			
-			puts player_one
+			@player_one = {name: @name, bankroll: @money}
 
-			
+			puts "Welcome #{@player_one[:name]}! You have #{@player_one[:bankroll]} to gamble."
 		end
 
-		def bankroll
+		def bankroll_change
 		end
 	end
 end

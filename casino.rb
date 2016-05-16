@@ -12,7 +12,8 @@ class Casino
 
 	def play
 		puts 'Welcome to the casino!'
-		player = Player::Person.new.gets_info
+		player = Player::Person.new
+		player.gets_info
 	end
 end
 
@@ -21,8 +22,7 @@ end
 
 
 
-# Player enters casino
-# Get player info and initial bank roll
+
 # Choose game from menu (slots and high/low)
 
 # Player makes bet
