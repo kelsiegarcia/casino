@@ -3,18 +3,20 @@ require_relative 'player'
 Dir[File.dirname(__FILE__) + '/mechanics/*.rb'].each {|file| require file }
 
 class Casino
-	include Mechanics
-	include Player
+    include Mechanics
+    include Player
 
-	def initialize
-		@player = Player::Person.new
-	end
+    def initialize
+        @player = Player::Person.new
+    end
 
-	def play
-		puts 'Welcome to the casino!'
-		player = Player::Person.new
-		player.gets_info
-	end
+    def play
+        puts 'Welcome to the casino!'
+        player = Player::Person.new
+        player.gets_info
+    end
+
+    
 end
 
 @game = Casino.new
