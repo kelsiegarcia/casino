@@ -18,7 +18,7 @@ module Player
 
             @player_one = {name: @name, bankroll: @money}
 
-            puts "Welcome #{@player_one[:name]}! You have #{@player_one[:bankroll]} to gamble."
+            puts "Welcome #{@player_one[:name]}! You have $#{@player_one[:bankroll]} in chips."
         end
 
         def bankroll_change

@@ -1,10 +1,12 @@
 require_relative 'player'
+require_relative 'menu'
 
 Dir[File.dirname(__FILE__) + '/mechanics/*.rb'].each {|file| require file }
 
 class Casino
-    include Mechanics
+    # include Mechanics
     include Player
+    include Menu
 
     def initialize
         @player = Player::Person.new
@@ -14,6 +16,9 @@ class Casino
         puts 'Welcome to the casino!'
         player = Player::Person.new
         player.gets_info
+
+        Menu::Main_menu.display
+
     end
 
     
