@@ -23,9 +23,14 @@ module Mechanics
       @suits.each do |suit|
         @ranks.each do |rank|
           @cards << Card.new(rank, suit)
-        end
+        end   
       end
     end
+
+    def pick_a_card
+      @cards.sample.rank
+    end
+
   end
 
 end

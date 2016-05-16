@@ -18,7 +18,6 @@ module Menu
       when '2'
         high_low = High_low.new
         high_low.play
-        #high_low.deal_card
       when '3'
         #Check bankroll
       when '4'
