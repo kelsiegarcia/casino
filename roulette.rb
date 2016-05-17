@@ -11,6 +11,8 @@ class Roulette
   end
 
   def play(player)
+    again = true
+    while again
     puts 'How much would you like to bet?'
     wager = gets.strip.to_f
     player.validate_wager(wager, player)
@@ -26,5 +28,7 @@ class Roulette
       player.balance('-', wager)
       player.display_money      
     end
+  again = player.keep_playing(player)
+  end
   end
 end
