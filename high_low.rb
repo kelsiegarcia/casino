@@ -13,7 +13,7 @@ class HighLow
 
 	def play(player)
 		puts 'How much would you like to bet?'
-		wager = gets.strip.to_i
+		wager = gets.strip.to_f
 
 		validate_wager(wager, player)
 
@@ -66,7 +66,7 @@ class HighLow
 			return wager
 		elsif wager > player.money
 			puts 'Insufficient funds'
-			Menu::Main_menu.display(player)
+			Menu::MainMenu.display(player)
 		elsif wager == 0
 			puts 'You must make a real bet to play!'
 			play(player)
@@ -80,7 +80,7 @@ class HighLow
 			puts 'Get ready for your next bet...'
 			play(player)
 		when 'n'
-			Menu::Main_menu.display(player)
+			Menu::MainMenu.display(player)
 		else
 			'Invalid option.'
 			keep_playing(player)

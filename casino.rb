@@ -15,7 +15,7 @@ class Casino
     def play
         puts 'Welcome to the casino!'
         @player.gets_info
-        Menu::Main_menu.display(@player)
+        Menu::MainMenu.display(@player)
     end
 
     

@@ -11,17 +11,18 @@ module Player
             @name = gets.strip
 
             puts 'How much money do you want to start with?'
-            @money = gets.strip.to_i
+            @money = gets.strip.to_f
 
             puts "Welcome #{@name}! You have $#{@money} in chips."
         end
 
-        def balance(operation, bet)
- 			@money = @money.send(operation, bet)
+        def balance(operation, money)
+ 			@money = @money.send(operation, money)
         end
 
         def display_money
-        	puts "You now have $#{@money}"
+        	puts "You have $#{@money} to gamble"
         end
+
     end
 end

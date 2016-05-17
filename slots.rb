@@ -7,5 +7,5 @@ class Slots
 	include Mechanics
 	include Player
 
-
+	class
 end 
