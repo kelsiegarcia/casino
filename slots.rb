@@ -18,19 +18,22 @@ class Slots
       wager = gets.strip.to_f
       player.validate_wager(wager, player)
       spin(wager, player)
+      again = player.keep_playing(player)
     end
-    again = player.keep_playing(player)
   end
 
   def spin(wager, player)
     if @reel[0] == @reel[1] && @reel[1] == @reel[2]
+      puts "#{@reel}"
       puts "Jackpot!! You WIN!!"
       player.balance('+', wager)
       player.display_money
     else 
-      puts "Sorry, you LOSE!!"
-      player.balance('-', wager)
-      player.display_money
+      	puts "#{@reel}"
+        puts "Sorry, you LOSE!!"
+      	player.balance('-', wager)
+      	player.display_money
     end
   end
+
 end 

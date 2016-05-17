@@ -54,7 +54,7 @@ class HighLow
 					player.display_money
 				end
 			end
-		again = player.keep_playing(player)
+			again = player.keep_playing(player)
 		end
 	end
 

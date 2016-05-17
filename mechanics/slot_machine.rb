@@ -5,7 +5,8 @@ module Mechanics
     def self.spin
       display_reel = []
       reel_one = ['A', 'Jackpot!!', 'Cherry!', '7', 'BAR']
-      display_reel << reel_one.sample << reel_one.sample << reel_one.sample 
+      display_reel << reel_one.sample << reel_one.sample << reel_one.sample
+      return display_reel 
     end
   end
 end
