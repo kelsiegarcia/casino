@@ -1,7 +1,11 @@
+require 'colorize'
 module Player
     class Person
         attr_accessor :name, :money
         def initialize
+            # @players = []
+
+            # gets_info
             @name = ''
             @money = 0
         end

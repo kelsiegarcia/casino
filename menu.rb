@@ -5,6 +5,7 @@ require_relative 'slots'
 require_relative 'player'
 >>>>>>> Roulette game!
 require_relative 'roulette'
+require 'colorize'
 
 module Menu
 
@@ -82,7 +83,7 @@ module Menu
       puts ' SELECT YOUR PLAYER '
       puts '********************'
 
-          
+
 
 
     end

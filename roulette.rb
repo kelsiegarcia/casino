@@ -1,5 +1,6 @@
 require 'pry'
 require_relative 'player'
+require 'colorize'
 Dir[File.dirname(__FILE__) + '/mechanics/*.rb'].each {|file| require file }
 
 class Roulette
@@ -13,6 +14,16 @@ class Roulette
   def play(player)
     again = true
     while again
+    puts """
+    $$$$$$$    $$$$$$   $$    $$  $$        $$$$$$$$  $$$$$$$$  $$$$$$$$  $$$$$$$$
+    $$  __$$  $$  __$$  $$ |  $$ |$$ |      $$  _____| __$$  __| __$$  __|$$  _____|
+    $$ |  $$ |$$ /  $$ |$$ |  $$ |$$ |      $$ |         $$ |      $$ |   $$ |      
+    $$$$$$$  |$$ |  $$ |$$ |  $$ |$$ |      $$$$$        $$ |      $$ |   $$$$$     
+    $$  __$$< $$ |  $$ |$$ |  $$ |$$ |      $$  __|      $$ |      $$ |   $$  __|   
+    $$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |      $$ |         $$ |      $$ |   $$ |      
+    $$ |  $$ | $$$$$$  |  $$$$$  |$$$$$$$$  $$$$$$$$     $$ |      $$ |   $$$$$$$$  
+     __|   __|  ______/   ______/  ________| ________|    __|       __|    ________|
+    """.blue.on_red.blink
     puts 'How much would you like to bet?'
     wager = gets.strip.to_f
     player.validate_wager(wager, player)

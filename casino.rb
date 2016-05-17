@@ -1,6 +1,7 @@
 require 'pry'
 require_relative 'player'
 require_relative 'menu'
+require 'colorize'
 
 Dir[File.dirname(__FILE__) + '/mechanics/*.rb'].each {|file| require file }
 
@@ -13,7 +14,7 @@ class Casino
     end
 
     def play
-        puts 'Welcome to the casino!'
+        puts 'Welcome to the casino!'.colorize(:blue)
         @player.gets_info
         Menu::MainMenu.display(@player)
     end
