@@ -5,27 +5,29 @@ module Menu
 
   class MainMenu
     def self.display(player)
-      puts '**************'
-      puts '     MENU     '
-      puts '**************'
-      puts "What would you like to do?"
-      puts "1: Slots"
-      puts "2: High/Low"
-      puts "3: See bankroll"
-      puts "4: Leave casino"
+      while true
+        puts '**************'
+        puts '     MENU     '
+        puts '**************'
+        puts "What would you like to do?"
+        puts "1: Slots"
+        puts "2: High/Low"
+        puts "3: See bankroll"
+        puts "4: Leave casino"
 
-      case gets.strip
-      when '1'
-        @slots = Slots.new
-        @slots.play(player)
-      when '2'
-        @high_low = HighLow.new
-        @high_low.play(player)
-      when '3'
-        BankrollMenu.display(player)
-      when '4'
-        abort("Thanks for playing")
-      end
+        case gets.strip
+        when '1'
+          @slots = Slots.new
+          @slots.play(player)
+        when '2'
+          @high_low = HighLow.new
+          @high_low.play(player)
+        when '3'
+          BankrollMenu.display(player)
+        when '4'
+          abort("Thanks for playing")
+        end
+      end    
     end
   end
 
