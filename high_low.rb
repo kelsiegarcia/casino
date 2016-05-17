@@ -72,7 +72,7 @@ class HighLow
 			play(player)
 		end
 	end	
-
+	#module
 	def keep_playing(player)
 		puts 'Keep playing? (y/n)'
 		next_game = gets.strip

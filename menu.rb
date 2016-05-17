@@ -1,4 +1,5 @@
 require_relative 'high_low'
+require_relative 'slots'
 
 module Menu
 
@@ -15,7 +16,8 @@ module Menu
 
       case gets.strip
       when '1'
-        #Slot file
+        @slots = Slots.new
+        @slots.play(player)
       when '2'
         @high_low = HighLow.new
         @high_low.play(player)
