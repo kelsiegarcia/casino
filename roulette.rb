@@ -13,10 +13,17 @@ class Roulette
 
   def play(player)
     again = true
+    puts """
+      _____     ____    _    _   _        ______   _______   _______   ______ 
+     |  __     / __    | |  | | | |      |  ____| |__   __| |__   __| |  ____|
+     | |__) | | |  | | | |  | | | |      | |__       | |       | |    | |__   
+     |  _  /  | |  | | | |  | | | |      |  __|      | |       | |    |  __|  
+     | | | |  | |__| | | |__| | | |____  | |____     | |       | |    | |____ 
+     |_| |_|    ____/    ____/  |______| |______|    |_|       |_|    |______|
+     """.colorize(:red)
     while again
     puts 'How much would you like to bet?'
-    wager = gets.strip.to_f
-    player.validate_wager(wager, player)
+    wager = player.validate_wager(player)
     puts "Pick a number 1 through 30"
     picked_number = gets.strip.to_i
     puts "#{@spin}"

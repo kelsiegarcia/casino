@@ -13,10 +13,15 @@ class HighLow
 
 	def play(player)
 		again = true
+		puts """
+
+
+		"""
+
+
 		while again
 			puts 'How much would you like to bet?'
-			wager = gets.strip.to_f
-			player.validate_wager(wager, player)
+			wager = player.validate_wager(player)
 			first_card = draw_high_low
 			puts "Will the next card be high or low?"
 			puts "1. High"

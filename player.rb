@@ -3,9 +3,6 @@ module Player
     class Person
         attr_accessor :name, :money
         def initialize
-            # @players = []
-
-            # gets_info
             @name = ''
             @money = 0
         end
@@ -29,16 +26,13 @@ module Player
     	   puts "You have $#{@money} to gamble"
         end
 
-        def validate_wager(wager, player)
-            if wager <= player.money && wager != 0
-                return wager
-            elsif wager > player.money
-                puts 'Insufficient funds'
-                Menu::MainMenu.display(player)
-            elsif wager == 0
-                puts 'You must make a real bet to play!'
-                play(player)
-            end
+        def validate_wager(player)
+            wager = gets.strip.to_f
+            while wager <= 0 || wager > player.money
+	            puts "Please enter a wager between 0 and #{player.money}"
+	            wager = gets.strip.to_f 
+        	end
+        	return wager
         end 
 
         def keep_playing(player)
