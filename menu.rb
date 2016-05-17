@@ -4,7 +4,9 @@ module Menu
 
   class MainMenu
     def self.display(player)
-      puts "Welcome to our casino"
+      puts '**************'
+      puts '     MENU     '
+      puts '**************'
       puts "What would you like to do?"
       puts "1: Slots"
       puts "2: High/Low"

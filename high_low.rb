@@ -19,7 +19,7 @@ class HighLow
 
 
 		first_card = draw_high_low
-		puts "Will it be high or low?"
+		puts "Will the next card be high or low?"
 		puts "1. High"
 		puts "2. Low"
 
@@ -27,7 +27,7 @@ class HighLow
 		when "1"
 			second_card = draw_high_low
 			if first_card < second_card
-				puts "The dealer's card is higher! You win!"
+				puts "The dealer's card is higher! YOU WIN!!!!!"
 				player.balance('+', wager)
 				player.display_money
 			elsif first_card == second_card
@@ -57,7 +57,7 @@ class HighLow
 
 	def draw_high_low
 		player_card = @cards.pop
-		puts "Dealt card #{player_card.rank} of #{player_card.suit}"
+		puts "\n\nDEALER PLAYED: #{player_card.rank} of #{player_card.suit}\n\n"
 		return Mechanics::Deck.rank_index.index(player_card.rank)
 	end
 
@@ -75,11 +75,18 @@ class HighLow
 
 	def keep_playing(player)
 		puts 'Keep playing? (y/n)'
-		case gets.strip
-		when 'y'
+		next_game = gets.strip
+		if next_game == 'y' && player.money != 0
 			puts 'Get ready for your next bet...'
 			play(player)
-		when 'n'
+		elsif next_game == 'y' && player.money == 0
+		 	puts "\n\nOH NO...!!!"
+		 	puts "You have insufficient funds!\n\n"
+			Menu::MainMenu.display(player)
+		elsif next_game == 'n' && player.money != 0
+			Menu::MainMenu.display(player)
+		elsif next_game == 'n' && player.money == 0
+			puts "\n\nRemember that you can add funds in the \'bankroll\' option...\n\n"
 			Menu::MainMenu.display(player)
 		else
 			'Invalid option.'

@@ -13,7 +13,7 @@ module Player
             puts 'How much money do you want to start with?'
             @money = gets.strip.to_f
 
-            puts "Welcome #{@name}! You have $#{@money} in chips."
+            puts "\n\n\n\n\nWelcome #{@name}! You have $#{@money} in chips to gamble with.\n\n"
         end
 
         def balance(operation, money)
