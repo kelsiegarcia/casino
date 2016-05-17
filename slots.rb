@@ -26,7 +26,7 @@ class Slots
     if @reel[0] == @reel[1] && @reel[1] == @reel[2]
       puts "#{@reel}"
       puts "Jackpot!! You WIN!!"
-      player.balance('+', wager)
+      player.balance('+', 5 * wager)
       player.display_money
     else 
       	puts "#{@reel}"

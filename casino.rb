@@ -4,7 +4,6 @@ require_relative 'menu'
 Dir[File.dirname(__FILE__) + '/mechanics/*.rb'].each {|file| require file }
 
 class Casino
-    # include Mechanics
     include Player
     include Menu
 
@@ -23,12 +22,3 @@ end
 
 @game = Casino.new
 @game.play 
-
-
-
-
-# Choose game from menu (slots and high/low)
-
-# Player makes bet
-# Bankroll either moves up or down
-

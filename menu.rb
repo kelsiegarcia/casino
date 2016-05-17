@@ -1,5 +1,6 @@
 require_relative 'high_low'
 require_relative 'slots'
+require_relative 'roulette'
 
 module Menu
 
@@ -12,8 +13,9 @@ module Menu
         puts "What would you like to do?"
         puts "1: Slots"
         puts "2: High/Low"
-        puts "3: See bankroll"
-        puts "4: Leave casino"
+        puts "3: Roulette"
+        puts "4: See bankroll/ Add funds"
+        puts "5: Leave casino"
 
         case gets.strip
         when '1'
@@ -23,8 +25,11 @@ module Menu
           @high_low = HighLow.new
           @high_low.play(player)
         when '3'
-          BankrollMenu.display(player)
+          @roulette = Roulette.new
+          @roulette.play(player)
         when '4'
+          BankrollMenu.display(player)
+        when '5'
           abort("Thanks for playing")
         end
       end    
