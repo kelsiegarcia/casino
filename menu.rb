@@ -4,7 +4,7 @@ require_relative 'high_low'
 module Menu
 
   class Main_menu
-    def self.display
+    def self.display(player)
       puts "Welcome to our casino"
       puts "What would you like to do?"
       puts "1: Slots"
@@ -16,10 +16,10 @@ module Menu
       when '1'
         #Slot file
       when '2'
-        high_low = HighLow.new
-        high_low.play
+        @high_low = HighLow.new
+        @high_low.play(player)
       when '3'
-        #Check bankroll
+        puts 'This will check the bankroll'
       when '4'
         abort("Thanks for playing")
       end

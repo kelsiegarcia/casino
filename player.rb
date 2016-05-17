@@ -1,12 +1,9 @@
 module Player
     class Person
         attr_accessor :name, :money
-
-        
-
         def initialize
             @name = ''
-            @money = 3.00
+            @money = 0
         end
 
         def gets_info
@@ -16,12 +13,15 @@ module Player
             puts 'How much money do you want to start with?'
             @money = gets.strip.to_i
 
-            @player_one = {name: @name, bankroll: @money}
-
-            puts "Welcome #{@player_one[:name]}! You have $#{@player_one[:bankroll]} in chips."
+            puts "Welcome #{@name}! You have $#{@money} in chips."
         end
 
-        def bankroll_change
+        def balance(operation, bet)
+ 			@money = @money.send(operation, bet)
+        end
+
+        def display_money
+        	puts "You now have $#{@money}"
         end
     end
 end
