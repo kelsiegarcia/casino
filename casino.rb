@@ -18,13 +18,7 @@ class Casino
         @player.gets_info
         Menu::MainMenu.display(@player)
     end
-
-    
 end
 
 @game = Casino.new
-<<<<<<< 3e91d05c8e5bc9e9f73cf84b15d0a33ff22aedda
 @game.play 
-=======
-@game.play
->>>>>>> Roulette game!
