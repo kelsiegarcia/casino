@@ -11,7 +11,7 @@ class HighLow
 		@cards = Mechanics::Deck.new.cards.shuffle
 	end
 
-	def play
+	def play(player)
 		puts 'How much would you like to bet?'
 		wager = gets.strip.to_i
 		first_card = draw_high_low
@@ -22,21 +22,27 @@ class HighLow
 		case gets.strip
 		when "1"
 			second_card = draw_high_low
-			if first_card > second_card
-				puts "It's Higher!"
+			binding.pry
+			if first_card < second_card
+				puts "It's Higher! You win"
+				player.balance(wager, '+')
 			elsif first_card == second_card
 				puts "It's a Tie"
 			else 
 				puts "Sorry, you lost"
+				player.balance(wager, '-')
 			end
 		when "2"
 			second_card = draw_high_low
-			if first_card < second_card
-				puts "It's Higher!"
+
+			if first_card > second_card
+				puts "It's Lower. You win!"
+				player.balance(wager, '+')
 			elsif first_card == second_card
 				puts "It's a Tie"
 			else 
 				puts "Sorry, you lost"
+				player.balance(wager, '-')				
 			end
 		end
 
