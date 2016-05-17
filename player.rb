@@ -6,6 +6,7 @@ module Player
             @money = 0
         end
 
+
         def gets_info
             puts 'What should we call you?'
             @name = gets.strip

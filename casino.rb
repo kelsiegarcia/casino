@@ -1,3 +1,4 @@
+require 'pry'
 require_relative 'player'
 require_relative 'menu'
 
@@ -21,4 +22,8 @@ class Casino
 end
 
 @game = Casino.new
+<<<<<<< 3e91d05c8e5bc9e9f73cf84b15d0a33ff22aedda
 @game.play 
+=======
+@game.play
+>>>>>>> Roulette game!
