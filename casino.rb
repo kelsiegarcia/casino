@@ -62,7 +62,7 @@ class Casino
 	          bankroll_menu
 	        when '5'
 	          player_menu
-	        when '6'
+          when '6'
 	          abort("""
  ██████╗ █████╗ ███████╗██╗  ██╗     ██████╗ ██╗   ██╗████████╗
 ██╔════╝██╔══██╗██╔════╝██║  ██║    ██╔═══██╗██║   ██║╚══██╔══╝
@@ -72,18 +72,29 @@ class Casino
  ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝     ╚═════╝  ╚═════╝    ╚═╝   
  	          	""".colorize(:color => :light_red, :background => :light_black))
 	        end
-	    else
-	    	gets.strip
+        else
+          puts 'No available funds. Select option 4 to add more or 6 to leave casino'
 
-	    	while @current_player.money <= 0
-	    		puts 'No available funds. Select option 4 to add more'
-	    		bankroll_menu if gets.strip.to_i == 4 
-	    	end
-	    	
-	    end	
+          while @current_player.money <= 0
+	    		  selection = gets
+            if selection.strip.to_i == 4
+              bankroll_menu
+            elsif selection.strip.to_i == 6
+                                      
+            abort("""
+ ██████╗ █████╗ ███████╗██╗  ██╗     ██████╗ ██╗   ██╗████████╗
+██╔════╝██╔══██╗██╔════╝██║  ██║    ██╔═══██╗██║   ██║╚══██╔══╝
+██║     ███████║███████╗███████║    ██║   ██║██║   ██║   ██║   
+██║     ██╔══██║╚════██║██╔══██║    ██║   ██║██║   ██║   ██║   
+╚██████╗██║  ██║███████║██║  ██║    ╚██████╔╝╚██████╔╝   ██║   
+ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝     ╚═════╝  ╚═════╝    ╚═╝   
+              """.colorize(:color => :light_red, :background => :light_black))
+            end
+	    	  end
+	      end	
       end    
     end
-
+      
     def bankroll_menu
       puts '*************'
       puts 'BANKROLL MENU'

@@ -12,7 +12,6 @@ class Slots
   end
 
   def play(player)
-    again = true
     puts """
          SSSSSSSSSSSSSSS LLLLLLLLLLL                  OOOOOOOOO     TTTTTTTTTTTTTTTTTTTTTTT   SSSSSSSSSSSSSSS 
        SS:::::::::::::::SL:::::::::L                OO:::::::::OO   T:::::::::::::::::::::T SS:::::::::::::::S
@@ -32,11 +31,13 @@ class Slots
        SSSSSSSSSSSSSSS   LLLLLLLLLLLLLLLLLLLLLLLL     OOOOOOOOO           TTTTTTTTTTT       SSSSSSSSSSSSSSS   
     """.colorize(:cyan)
     
+    again = true
     while again
       puts 'How much would you like to bet?'
       wager = player.validate_wager(player)
       spin(wager, player)
       again = player.keep_playing(player)
+      @reel = Mechanics::Slots.spin
     end
   end
 
